@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>OopsTrip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛫</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1 class="logo">
+  <span class="logo-icon">✈️</span>
+  <span class="logo-text">OopsTrip</span>
+</h1>
+<p class="tagline">
+  Panel de salidas mal planificadas
+</p>
+<div id="stats" class="stats-row">
+  <div class="stats-col">
+    <span class="stats-label">PAÍSES VISITADOS</span>
+    <span class="stats-value" id="countriesCount">00</span>
+  </div>
+
+  <div class="stats-divider"></div>
+
+  <div class="stats-col">
+    <span class="stats-label">MISIONES COMPLETADAS</span>
+    <span class="stats-value" id="missionsCount">00</span>
+  </div>
+</div>
+
+</header>
+
+<main class="board">
+
+  <!-- INPUT -->
+  <form id="form" class="flight-input">
+    · Destino
+    <input id="place" type="text" placeholder="Tokio" required>
+    · Misión
+    <input id="action" type="text" placeholder="comer ramen a las 3am" required>
+    <button>ADD</button>
+  </form>
+
+  <!-- VIEW SWITCH -->
+  <div class="view-switch">
+    <button id="showBoard">✈️ Panel</button>
+    <button id="showMap">🗺️ Mapa</button>
+  </div>
+
+  <!-- BOARD -->
+  <div class="columns">
+    <span>DESTINO</span>
+    <span>MISIÓN</span>
+    <span>ESTADO</span>
+    <span>ACCIONES</span>
+  </div>
+
+  <ul id="list"></ul>
+
+  <!-- MAP -->
+  <section id="mapView" class="hidden">
+    <div id="map"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>OopsTrip Airlines — desde 2026</p>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- GOOGLE MAPS -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX5oSjFLrUrYAymdLWyMX02y78XQrRUkU&callback=initMap"
+  async
+  defer>
+</script>
+
+</body>
+</html>
